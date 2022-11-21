@@ -32,7 +32,8 @@ docker-compose exec php bash
 
 O volume do banco de dados MySQL definido no container ficará na raiz do projeto quando baixado para a sua máquina. 
 
+O projeto teve o prenúncio de trabalhar com com mensagens advindas também do banco de dados. por limitação pessoal (de tempo) não consegui trazer esta implementação aqui.
 
 # Suporte
 
-Caso algo dê errado no processo de build da aplicação, envie um e-mail para `sergiodanilojr@hotmail.com` e/ou abra uma issue aqui neste repositório. Assim que possível estarei responderei para que possamos propor uma melhoria ou identificar/resolver o infortúnio.
+Caso algo dê errado no processo de build da aplicação, envie um e-mail para `sergiodanilojr@hotmail.com` e/ou abra uma issue aqui neste repositório. Assim que possível estarei respondendo para que possamos propor uma melhoria ou identificar/resolver o infortúnio.
