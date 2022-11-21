@@ -5,5 +5,5 @@ return [
     
     "25-12" => "Ho ho ho! Merry Christmas!!!",
     
-    "15-01" => "It's my Sergio Danilo Jr. birthday!", 
+    "15-01" => "It's Sergio Danilo Jr. birthday!", 
 ];

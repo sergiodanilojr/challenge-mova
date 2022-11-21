@@ -1,9 +1,9 @@
 <?php
 
+require './vendor/autoload.php';
+
 use App\Greetings\FromConfig;
 use App\Greetings\Greetings;
-
-require './vendor/autoload.php';
 
 $fromConfig = new FromConfig();
 $date = new \DateTime("15-12-2022");
