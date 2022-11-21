@@ -20,13 +20,19 @@ cp .env.example .env
 docker-compose up -d --build
 ```
 
-### 3. para executar qualquer comando php, execute o seguinte comando.
+### 3. Para executar qualquer comando php, execute o seguinte comando.
 
 ```bash
 docker-compose exec php bash
 ```
 
-> Et voilà! Os serviços do PHP, Banco de dados e PHPMyAdmin subirão para prover um ambiente de desenvolvimento favorável ao desafio.
+### 4. Realize o dump do autoload do composer, para carregamento automático das classe se arquivos em seus respectivos namespaces.
+
+```bash
+docker-compose exec -T php composer dump-autoload
+```
+
+> Et voilà! Os serviços do PHP, Banco de dados e PHPMyAdmin subirão para prover um ambiente de desenvolvimento favorável ao desafio e o composer fez o setup para que a aplicação já rode aos moldes que se espera.
 
 # Ressalvas
 
