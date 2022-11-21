@@ -1,0 +1,49 @@
+version: '3'
+
+services:
+  php:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '${APP_PORT:-8080}:9000'
+    working_dir: /var/www
+    restart: unless-stopped
+    volumes:
+      - ./src:/var/www
+  #Database Service
+  database:
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: '${DB_PASSWORD}'
+      MYSQL_DATABASE: '${DB_DATABASE}'
+      MYSQL_USER: '${DB_USERNAME}'
+      MYSQL_PASSWORD: '${DB_PASSWORD}'
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'no'
+    ports:
+      - "${FORWARD_DB_PORT:-3306}:3306"
+    volumes:
+      - ./database/:/var/lib/mysql
+    healthcheck:
+            test: [ "CMD", "mysqladmin", "ping", "-p${DB_PASSWORD}" ]
+            retries: 3
+            timeout: 5s
+    networks:
+        - movanet
+  phpmyadmin:
+        image: phpmyadmin
+        restart: always
+        container_name: phpmyadmin
+        environment:
+            - PMA_ARBITRARY=1
+        ports:
+            - '${DB_ADM_FORWARD_PORT:-8081}:80'
+        depends_on:
+            -   database
+        networks:
+            - movanet
+
+networks:
+  movanet:
+    driver: bridge

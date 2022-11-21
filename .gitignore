@@ -1,0 +1,4 @@
+/database
+/docker/database
+.env
+/src/vendor
