@@ -6,6 +6,7 @@ Desafio proposto pela Mova.vc a fim de trabalhar com o padrão strategy.
 
 
 ## Setup
+## Daniela
 
 ### 1. Copie o arquivo `.env.example` para um `.env` e defina as suas configurações para subir o projeto.
 

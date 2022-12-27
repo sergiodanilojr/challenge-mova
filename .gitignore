@@ -2,3 +2,5 @@
 /docker/database
 .env
 /src/vendor
+.DS_Store
+.DS_Store/
